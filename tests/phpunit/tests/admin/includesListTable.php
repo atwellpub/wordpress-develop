@@ -75,6 +75,7 @@ class Tests_Admin_includesListTable extends WP_UnitTestCase {
 
 	/**
 	 * @ticket 15459
+	 * @covers class::WP_Posts_List_Table
 	 */
 	function test_list_hierarchical_pages_first_page() {
 		$this->_test_list_hierarchical_page(
@@ -91,6 +92,7 @@ class Tests_Admin_includesListTable extends WP_UnitTestCase {
 
 	/**
 	 * @ticket 15459
+	 * @covers class::WP_Posts_List_Table
 	 */
 	function test_list_hierarchical_pages_second_page() {
 		$this->_test_list_hierarchical_page(
@@ -108,6 +110,7 @@ class Tests_Admin_includesListTable extends WP_UnitTestCase {
 
 	/**
 	 * @ticket 15459
+	 * @covers class::WP_Posts_List_Table
 	 */
 	function test_search_hierarchical_pages_first_page() {
 		$this->_test_list_hierarchical_page(
@@ -125,6 +128,7 @@ class Tests_Admin_includesListTable extends WP_UnitTestCase {
 
 	/**
 	 * @ticket 15459
+	 * @covers class::WP_Posts_List_Table
 	 */
 	function test_search_hierarchical_pages_second_page() {
 		$this->_test_list_hierarchical_page(
@@ -142,6 +146,7 @@ class Tests_Admin_includesListTable extends WP_UnitTestCase {
 
 	/**
 	 * @ticket 15459
+	 * @covers class::WP_Posts_List_Table
 	 */
 	function test_grandchildren_hierarchical_pages_first_page() {
 		// Page 6 is the first page with grandchildren.
@@ -161,6 +166,7 @@ class Tests_Admin_includesListTable extends WP_UnitTestCase {
 
 	/**
 	 * @ticket 15459
+	 * @covers class::WP_Posts_List_Table
 	 */
 	function test_grandchildren_hierarchical_pages_second_page() {
 		// Page 7 is the second page with grandchildren.
@@ -183,6 +189,9 @@ class Tests_Admin_includesListTable extends WP_UnitTestCase {
 	 *
 	 * @param array $args         Query args for the list of pages.
 	 * @param array $expected_ids Expected IDs of pages returned.
+	 * @covers class::WP_Posts_List_Table
+	 * @covers WP_Posts_List_Table::set_hierarchical_display
+	 * @covers WP_Posts_List_Table::display_rows
 	 */
 	protected function _test_list_hierarchical_page( array $args, array $expected_ids ) {
 		$matches = array();
@@ -227,6 +236,8 @@ class Tests_Admin_includesListTable extends WP_UnitTestCase {
 
 	/**
 	 * @ticket 37407
+	 * @covers class::WP_Posts_List_Table
+	 * @covers WP_Posts_List_Table::extra_tablenav
 	 */
 	function test_filter_button_should_not_be_shown_if_there_are_no_posts() {
 		// Set post type to a non-existent one.
@@ -241,6 +252,8 @@ class Tests_Admin_includesListTable extends WP_UnitTestCase {
 
 	/**
 	 * @ticket 37407
+	 * @covers class::WP_Posts_List_Table
+	 * @covers WP_Posts_List_Table::extra_tablenav
 	 */
 	function test_months_dropdown_should_not_be_shown_if_there_are_no_posts() {
 		// Set post type to a non-existent one.
@@ -255,6 +268,8 @@ class Tests_Admin_includesListTable extends WP_UnitTestCase {
 
 	/**
 	 * @ticket 37407
+	 * @covers class::WP_Posts_List_Table
+	 * @covers WP_Posts_List_Table::extra_tablenav
 	 */
 	function test_category_dropdown_should_not_be_shown_if_there_are_no_posts() {
 		// Set post type to a non-existent one.
@@ -269,6 +284,8 @@ class Tests_Admin_includesListTable extends WP_UnitTestCase {
 
 	/**
 	 * @ticket 38341
+	 * @covers class::WP_Posts_List_Table
+	 * @covers WP_Posts_List_Table::extra_tablenav
 	 */
 	public function test_empty_trash_button_should_not_be_shown_if_there_are_no_posts() {
 		// Set post type to a non-existent one.
