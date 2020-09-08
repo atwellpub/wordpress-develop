@@ -300,6 +300,9 @@ class Tests_Admin_includesListTable extends WP_UnitTestCase {
 
 	/**
 	 * @ticket 40188
+	 * @covers ::_get_list_table
+	 * @covers class::WP_Posts_List_Table
+	 * @covers WP_Posts_List_Table::extra_tablenav
 	 */
 	public function test_filter_button_should_not_be_shown_if_there_are_no_comments() {
 		$table = _get_list_table( 'WP_Comments_List_Table', array( 'screen' => 'edit-comments' ) );
@@ -313,6 +316,9 @@ class Tests_Admin_includesListTable extends WP_UnitTestCase {
 
 	/**
 	 * @ticket 40188
+	 * @covers ::_get_list_table
+	 * @covers class::WP_Posts_List_Table
+	 * @covers WP_Posts_List_Table::extra_tablenav
 	 */
 	public function test_filter_button_should_be_shown_if_there_are_comments() {
 		$post_id    = self::factory()->post->create();
@@ -335,6 +341,9 @@ class Tests_Admin_includesListTable extends WP_UnitTestCase {
 
 	/**
 	 * @ticket 40188
+	 * @covers ::_get_list_table
+	 * @covers class::WP_Posts_List_Table
+	 * @covers WP_Posts_List_Table::extra_tablenav
 	 */
 	public function test_filter_comment_status_dropdown_should_be_shown_if_there_are_comments() {
 		$post_id    = self::factory()->post->create();
@@ -358,6 +367,9 @@ class Tests_Admin_includesListTable extends WP_UnitTestCase {
 
 	/**
 	 * @ticket 38341
+	 * @covers ::_get_list_table
+	 * @covers class::WP_Posts_List_Table
+	 * @covers WP_Posts_List_Table::extra_tablenav
 	 */
 	public function test_empty_trash_button_should_not_be_shown_if_there_are_no_comments() {
 		$table = _get_list_table( 'WP_Comments_List_Table', array( 'screen' => 'edit-comments' ) );
@@ -371,6 +383,9 @@ class Tests_Admin_includesListTable extends WP_UnitTestCase {
 
 	/**
 	 * @ticket 45089
+	 * @covers class::WP_Posts_List_Table
+	 * @covers WP_Posts_List_Table::get_sortable_columns
+	 * @covers WP_Posts_List_Table::print_column_headers
 	 */
 	public function test_sortable_columns() {
 		require_once ABSPATH . 'wp-admin/includes/class-wp-comments-list-table.php';
@@ -405,6 +420,9 @@ class Tests_Admin_includesListTable extends WP_UnitTestCase {
 
 	/**
 	 * @ticket 45089
+	 * @covers class::WP_Posts_List_Table
+	 * @covers WP_Posts_List_Table::get_sortable_columns
+	 * @covers WP_Posts_List_Table::print_column_headers
 	 */
 	public function test_sortable_columns_with_current_ordering() {
 		require_once ABSPATH . 'wp-admin/includes/class-wp-comments-list-table.php';
