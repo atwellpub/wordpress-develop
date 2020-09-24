@@ -90,6 +90,7 @@ class Tests_Admin_Includes_Schema extends WP_UnitTestCase {
 	/**
 	 * @ticket 44893
 	 * @dataProvider data_populate_options
+	 * @covers ::populate_options
 	 */
 	function test_populate_options( $options, $expected ) {
 		global $wpdb;
@@ -182,6 +183,7 @@ class Tests_Admin_Includes_Schema extends WP_UnitTestCase {
 	 * @group multisite
 	 * @group ms-required
 	 * @dataProvider data_populate_site_meta
+	 * @covers ::populate_site_meta
 	 */
 	function test_populate_site_meta( $meta, $expected ) {
 		global $wpdb;
@@ -226,6 +228,7 @@ class Tests_Admin_Includes_Schema extends WP_UnitTestCase {
 	 * @ticket 44895
 	 * @group multisite
 	 * @dataProvider data_populate_network_meta
+	 * @covers ::populate_network_meta
 	 */
 	function test_populate_network_meta( $meta, $expected ) {
 		global $wpdb;
